@@ -17,7 +17,7 @@ namespace NarcissisticNumberDojo
 
         public static bool IsNarcissisticNumber(Int64 number)
         {
-            var digits = SplitNumberInDigits(number);
+            var digits = SplitNumberToDigits(number);
             Int64 resultNarcissisticNumber = 0;
             for (int digitIndex = 0; digitIndex < digits.Count; digitIndex++)
             {
@@ -28,7 +28,7 @@ namespace NarcissisticNumberDojo
             return false;
         }
 
-        public static List<int> SplitNumberInDigits(Int64 number)
+        public static List<int> SplitNumberToDigits(Int64 number)
         {
             List<int> result = new List<int>();
             Int64 numberDivedBy10;
