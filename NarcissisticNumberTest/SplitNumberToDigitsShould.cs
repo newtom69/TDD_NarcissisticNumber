@@ -11,7 +11,7 @@ namespace NarcissisticNumberDojoTest
         {
             for (int i = 1; i <= 9; i++)
             {
-                Assert.Equal(new List<int> { i }, NarcissisticNumber.SplitNumberToDigits(i));
+                Assert.Equal(new List<int> { i }, NarcissisticNumber.SplitNumberToDigits((uint)i));
             }
         }
 
