@@ -5,35 +5,39 @@ namespace NarcissisticNumberDojo
 {
     public class NarcissisticNumber
     {
-        public static List<int> NarcissisticNumberList(int maxNumber)
+        public static IEnumerable<Int64> NarcissisticNumberList(Int64 maxNumber)
         {
-            List<int> narcissisticNumbers = new List<int>();
-            for (int number = 1; number <= maxNumber; number++)
+            List<Int64> narcissisticNumbers = new List<Int64>();
+            for (Int64 number = 1; number <= maxNumber; number++)
             {
-                var digits = SplitNumberInDigits(number);
-                int resultNarcissisticNumber = 0;
-                for (int digitIndex = 0; digitIndex < digits.Count; digitIndex++)
-                {
-                    resultNarcissisticNumber += (int) Math.Pow(digits[digitIndex], digits.Count);
-                }
-
-                if (resultNarcissisticNumber == number)
-                    narcissisticNumbers.Add(number);
+                if (IsNarcissisticNumber(number))
+                    yield return number;
             }
-            return narcissisticNumbers;
         }
 
+        public static bool IsNarcissisticNumber(Int64 number)
+        {
+            var digits = SplitNumberInDigits(number);
+            Int64 resultNarcissisticNumber = 0;
+            for (int digitIndex = 0; digitIndex < digits.Count; digitIndex++)
+            {
+                resultNarcissisticNumber += (Int64) Math.Pow(digits[digitIndex], digits.Count);
+            }
+            if (resultNarcissisticNumber == number)
+                return true;
+            return false;
+        }
 
-        public static List<int> SplitNumberInDigits(int number)
+        public static List<int> SplitNumberInDigits(Int64 number)
         {
             List<int> result = new List<int>();
-            int numberDivedBy10;
+            Int64 numberDivedBy10;
             while ((numberDivedBy10 = number / 10) > 0)
             {
-                result.Add(number - numberDivedBy10 * 10);
+                result.Add((int) (number - numberDivedBy10 * 10));
                 number = numberDivedBy10;
             }
-            result.Add(number);
+            result.Add((int) number);
             return result;
         }
     }
