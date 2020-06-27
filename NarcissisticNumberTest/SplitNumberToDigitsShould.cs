@@ -4,10 +4,10 @@ using Xunit;
 
 namespace NarcissisticNumberDojoTest
 {
-    public class SplitNumberInDigitsShould
+    public class SplitNumberToDigitsShould
     {
         [Fact]
-        public void Return_n_when_n_is_1digits()
+        public void Return_n_when_n_is_1digit()
         {
             for (int i = 1; i <= 9; i++)
             {
