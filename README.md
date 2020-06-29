@@ -1,6 +1,6 @@
 # TDD_NarcissisticNumber
 
-https://mathworld.wolfram.com/NarcissisticNumber.html
+what is it ? https://mathworld.wolfram.com/NarcissisticNumber.html
 
 Some Narcissistic numbers :
 1
